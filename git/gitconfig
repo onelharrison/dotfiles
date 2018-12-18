@@ -1,3 +1,5 @@
 [user]
 	name = Onel Harrison
 	email = onelharrison@users.noreply.github.com 
+[core]
+	editor = vim
