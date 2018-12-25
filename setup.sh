@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 is_installed() {
   [ -x "$(command -v $1)" ]
 }
@@ -10,7 +12,7 @@ install_software() {
 }
 
 check_or_install() {
-  if [ is_installed $1 ]; then;
+  if is_installed $1; then
     echo "$1 is installed."
   else
     install_software $1
@@ -18,7 +20,7 @@ check_or_install() {
 }
 
 check_or_set_default_shell() {
-  if [ -z "${SHELL##*$1*}" ] ;then
+  if [ -z "${SHELL##*$1*}" ]; then
     echo "Default shell is $1."
   else
     echo "Default shell has been set to $1."
@@ -37,14 +39,19 @@ echo
 
 check_or_set_default_shell zsh
 
-cp ~/.tmux.conf ~/.tmux.conf.old
-printf "source-file ~/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
+cp ~/.tmux.conf ~/.tmux.conf.old 2>/dev/null
+printf "source-file ~/git/dotfiles/tmux/tmux.conf" > ~/.tmux.conf
 
-cp ~/.vimrc ~/.vimrc.old
-printf "so ~/dotfiles/vim/vimrc.vim" > ~/.vimrc
+cp ~/.vimrc ~/.vimrc.old 2>/dev/null
+printf "so ~/git/dotfiles/vim/vimrc.vim" > ~/.vimrc
+rm -rf ~/.vim.old 2>/dev/null
+mv ~/.vim ~/.vim.old 2>/dev/null
+cp -r ~/git/dotfiles/vim/vim ~/.vim
 
-cp ~/.zshrc ~/.zshrc.old
-printf "source ~/dotfiles/zsh/zshrc" > ~/.zshrc
+cp ~/.zshrc ~/.zshrc.old 2>/dev/null
+printf "source ~/git/dotfiles/zsh/zshrc" > ~/.zshrc
+
+rbenv/src/configure && make -C rbenv/src
 
 echo
 echo "Log out and log back in for default shell to be initialized."
