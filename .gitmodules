@@ -4,3 +4,6 @@
 [submodule "rbenv"]
 	path = rbenv
 	url = https://github.com/rbenv/rbenv
+[submodule "vim/vim/pack/plugins/start/syntastic"]
+	path = vim/vim/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
