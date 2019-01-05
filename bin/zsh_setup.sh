@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-. $SCRIPT_ABS_DIR/lib/utils.sh
-
 echo 'INIT: zsh setup initiated.'
 
 check_or_install zsh

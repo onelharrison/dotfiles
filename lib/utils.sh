@@ -13,7 +13,7 @@ install_software() {
 
 check_or_install() {
   if is_installed $1; then
-    echo "SKIP: $1 is installed."
+    echo "SKIP: $1 is already installed."
   else
     install_software $1
   fi
@@ -21,9 +21,9 @@ check_or_install() {
 
 check_or_set_default_shell() {
   if [ -z "${SHELL##*$1*}" ]; then
-    echo "INFO: default shell is $1."
+    echo "INFO: $1 is the default shell."
   else
-    echo "INFO: default shell has been set to $1."
+    echo "INFO: $1 has been set as the default shell."
     chsh -s $(which $1)
   fi
 }

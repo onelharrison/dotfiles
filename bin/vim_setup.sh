@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-. $SCRIPT_ABS_DIR/lib/utils.sh
-
 echo 'INIT: vim setup initiated.'
 
 check_or_install vim
