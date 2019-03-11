@@ -1,2 +1,7 @@
 *.swp
 .netrwhist
+
+# Compiled source #
+###################
+*.o
+*.class
