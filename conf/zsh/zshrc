@@ -1,1 +1,3 @@
 . $HOME/github/onelharrison/dotfiles/conf/zsh/zshrc_extended
+
+. $HOME/github/onelharrison/dotfiles/conf/zsh/git.zsh
