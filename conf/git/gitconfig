@@ -3,4 +3,4 @@
 	email = onelharrison@users.noreply.github.com 
 [core]
 	editor = vim
-	excludesfile = /home/onel/.gitignore_global
+	excludesfile = ~/.gitignore_global
