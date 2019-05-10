@@ -12,9 +12,9 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/bin/zsh_setup.sh
 
 # Language Environments
-. $SCRIPT_ABS_DIR/bin/hs_base_setup.sh
-. $SCRIPT_ABS_DIR/bin/js_base_setup.sh
-. $SCRIPT_ABS_DIR/bin/py_base_setup.sh
-. $SCRIPT_ABS_DIR/bin/rb_base_setup.sh
+. $SCRIPT_ABS_DIR/bin/haskell_base_setup.sh
+. $SCRIPT_ABS_DIR/bin/javascript_base_setup.sh
+. $SCRIPT_ABS_DIR/bin/python_base_setup.sh
+. $SCRIPT_ABS_DIR/bin/ruby_base_setup.sh
 
 exec $SHELL
