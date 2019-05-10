@@ -28,3 +28,4 @@ alias ggpush='git push origin "$(git_current_branch)"'
 alias gm='git merge'
 
 alias gst='git status'
+
