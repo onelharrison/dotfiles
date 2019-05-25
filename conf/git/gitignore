@@ -21,9 +21,12 @@ auto-save-list
 /node_modules
 /bower_components
 
+# Haskell
+*.hi
+.stack-work/
+
 # Compiled source #
 ###################
 *.o
 *.class
-
 
