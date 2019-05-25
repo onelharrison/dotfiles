@@ -8,8 +8,8 @@ if [ -d ~/.emacs.d.old ]; then
   rm -r ~/.emacs.d.old
 fi
 
-mv $HOME/.emacs $HOME/.emacs.old 2>/dev/null
-ln -s $SCRIPT_ABS_DIR/conf/emacs/emacs $HOME/.emacs
+# mv $HOME/.emacs $HOME/.emacs.old 2>/dev/null
+# ln -s $SCRIPT_ABS_DIR/conf/emacs/emacs $HOME/.emacs
 
 # install evil mode
 if [ -e $HOME/.emacs.d.old ]; then
