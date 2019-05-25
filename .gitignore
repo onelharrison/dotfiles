@@ -1,1 +1,5 @@
 conf/rbenv
+
+# Emacs
+*~
+\.emacs.desktop

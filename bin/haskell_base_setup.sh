@@ -11,7 +11,12 @@ echo 'INIT: haskell base setup initiated.'
 if haskell_platform_installed; then
   echo 'SKIP: haskell-platform is installed.'
 else
+  # install haskell-platform
   install_software haskell-platform
+  # install ghc-mod
+  cabal install ghc-mod
+  # install stack
+  curl -sSL https://get.haskellstack.org/ | sh
 fi
 
 echo 'DONE: haskell base setup completed.'

@@ -1,9 +1,23 @@
+.git/
+
+# Emacs
+*~
+\#*\#
+\.emacs.desktop
+\.emacs.desktop.lock
+auto-save-list
+
+# Python
 *.pyc
+
+# Vim
 *.swp
 .netrwhist
 
+# Ruby
 .byebug_history
-.git/
+
+# JavaScript
 /node_modules
 /bower_components
 

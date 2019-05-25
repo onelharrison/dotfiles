@@ -17,7 +17,7 @@ ln -s $SCRIPT_ABS_DIR/conf/git/gitconfig $HOME/.gitconfig
 
 # Setup global gitignore
 mv $HOME/.gitignore $HOME/.gitignore.old 2>/dev/null
-ln -s $SCRIPT_ABS_DIR/conf/git/gitignore_global $HOME/.gitignore
+ln -s $SCRIPT_ABS_DIR/conf/git/gitignore $HOME/.gitignore
 
 echo 'DONE: git setup completed.'
 echo '--------'
