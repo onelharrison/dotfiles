@@ -7,3 +7,4 @@
 [submodule "conf/vim/vim/pack/plugins/start/vim-prettier"]
 	path = conf/vim/vim/pack/plugins/start/vim-prettier
 	url = git@github.com:prettier/vim-prettier.git
+

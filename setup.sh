@@ -9,6 +9,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/bin/git_setup.sh
 . $SCRIPT_ABS_DIR/bin/tmux_setup.sh
 . $SCRIPT_ABS_DIR/bin/vim_setup.sh
+. $SCRIPT_ABS_DIR/bin/emacs_setup.sh
 . $SCRIPT_ABS_DIR/bin/zsh_setup.sh
 
 # Language Environments
