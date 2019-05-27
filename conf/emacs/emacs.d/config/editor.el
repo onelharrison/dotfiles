@@ -14,3 +14,6 @@
 (desktop-save-mode t)
 (save-place-mode t)
 
+; Alias action confirmations
+(defalias 'yes-or-no-p 'y-or-n-p)
+

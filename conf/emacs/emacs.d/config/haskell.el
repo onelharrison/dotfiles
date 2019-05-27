@@ -4,10 +4,8 @@
 
 (use-package intero)
 (intero-global-mode 1)
-(add-hook 'haskell-mode-hook 'intero-mode)
 
-(use-package hindent)
+(use-package hindent
+  :config
+  (add-hook 'haskell-mode-hook #'hindent-mode))
 
-; (use-package ghc
-;   :config
-;   (add-hook 'haskell-mode-hook (lambda () (ghc-init))))

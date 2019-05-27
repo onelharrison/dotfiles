@@ -24,6 +24,9 @@
 ; Install use-package
 (straight-use-package 'use-package)
 
+;; LOAD CONFIGUATION
+;; -----------------
+
 (dolist
   (file 
     (directory-files
@@ -33,3 +36,4 @@
     )
   )
   (load file))
+

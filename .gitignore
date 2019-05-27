@@ -3,3 +3,7 @@ conf/rbenv
 # Emacs
 *~
 \.emacs.desktop
+**/emacs.d/straight
+**/emacs.d/elpa
+**/emacs.d/eshell
+**/emacs.d/places

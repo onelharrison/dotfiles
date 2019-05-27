@@ -13,10 +13,10 @@ if haskell_platform_installed; then
 else
   # install haskell-platform
   install_software haskell-platform
-  # install ghc-mod
-  cabal install ghc-mod
   # install stack
   curl -sSL https://get.haskellstack.org/ | sh
+  # install hindent
+  stack install hindent
 fi
 
 echo 'DONE: haskell base setup completed.'
