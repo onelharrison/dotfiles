@@ -8,8 +8,7 @@ export GIT_HOME="$HOME/github.com/$GIT_USER"
 check_or_install git
 
 # Setup space for git repos
-mkdir -p  $HOME/github.com
-mkdir -p  $HOME/github.com/$GIT_USER
+mkdir -p  $GIT_HOME
 
 # Setup global gitconfig
 mv $HOME/.gitconfig $HOME/.gitconfig.old 2>/dev/null
