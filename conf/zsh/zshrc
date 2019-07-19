@@ -1,3 +1,7 @@
-. $HOME/github/onelharrison/dotfiles/conf/zsh/zshrc_extended
+. $HOME/github.com/onelharrison/dotfiles/conf/zsh/git.zsh
 
-. $HOME/github/onelharrison/dotfiles/conf/zsh/git.zsh
+. $HOME/github.com/onelharrison/dotfiles/conf/zsh/rails.zsh
+
+. $HOME/github.com/onelharrison/dotfiles/conf/zsh/bundler.zsh
+
+. $HOME/github.com/onelharrison/dotfiles/conf/zsh/zshrc_extended
