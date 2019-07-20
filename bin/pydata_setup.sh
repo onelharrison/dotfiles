@@ -14,8 +14,8 @@ TMP_DIR=/tmp
 cd "$TMP_DIR"
 curl -sSL -O "https://repo.anaconda.com/archive/$ANACONDA"
 
-DOWNLOAD_SHA256_HASH=sha256sum "$TMP_DIR/$ANACONDA" | cut -d' ' -f1
-if [ ! $DOWNLOADED_SHA256_HASH = $ANACONDA_SHA256_HASH ]; then
+GENERATED_SHA256_HASH=sha256sum "$TMP_DIR/$ANACONDA" | cut -d' ' -f1
+if [ ! $GENERATED_SHA256_HASH = $ANACONDA_SHA256_HASH ]; then
   echo "Anaconda not installed. Install script tampered"
   exit 1
 fi
