@@ -17,3 +17,6 @@
 ; Alias action confirmations
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; SEARCHING AND NAVIGATION
+
+(use-package helm)
