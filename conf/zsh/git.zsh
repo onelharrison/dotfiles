@@ -14,6 +14,7 @@ alias gc='git commit -v'
 alias gcb='git checkout -b'
 alias gcm='git checkout master'
 alias gcmsg='git commit -m'
+alias gcn!='git commit --amend --no-edit'
 alias gco='git checkout'
 
 alias gd='git diff'
