@@ -19,4 +19,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/bin/python_base_setup.sh
 . $SCRIPT_ABS_DIR/bin/ruby_base_setup.sh
 
+# Other Tools
+. $SCRIPT_ABS_DIR/bin/docker_setup.sh
+
 exec $SHELL
