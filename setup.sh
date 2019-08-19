@@ -21,5 +21,6 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 
 # Other Tools
 . $SCRIPT_ABS_DIR/bin/docker_setup.sh
+. $SCRIPT_ABS_DIR/bin/ros_setup.sh
 
 exec $SHELL
