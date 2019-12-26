@@ -1,10 +1,12 @@
 [submodule "conf/vim/vim/pack/plugins/start/vimwiki"]
-	path = vim/vim/pack/plugins/start/vimwiki
+	path = conf/vim/vim/pack/plugins/start/vimwiki
 	url = https://github.com/vimwiki/vimwiki
 [submodule "conf/vim/vim/pack/plugins/start/syntastic"]
-	path = vim/vim/pack/plugins/start/syntastic
+	path = conf/vim/vim/pack/plugins/start/syntastic
 	url = https://github.com/vim-syntastic/syntastic
 [submodule "conf/vim/vim/pack/plugins/start/vim-prettier"]
 	path = conf/vim/vim/pack/plugins/start/vim-prettier
 	url = git@github.com:prettier/vim-prettier.git
-
+[submodule "conf/vim/vim/pack/default/start/vim-polyglot"]
+	path = conf/vim/vim/pack/default/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot

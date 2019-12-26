@@ -70,16 +70,9 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic configs
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugin config
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:sytastic_javascript_checkers = ['eslint']
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/syntastic.vim
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/prettier.vim
