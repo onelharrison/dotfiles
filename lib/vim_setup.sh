@@ -7,8 +7,6 @@ check_or_install vim
 mv $HOME/.vimrc $HOME/.vimrc.old 2>/dev/null
 ln -s $SCRIPT_ABS_DIR/conf/vim/vimrc.vim $HOME/.vimrc
 
-. $SCRIPT_ABS_DIR/conf/vim/filetypes/filetypes.sh
-
 rm -rf $HOME/.vim.old/ 2>/dev/null
 mv $HOME/.vim/ $HOME/.vim.old/ 2>/dev/null
 rm -rf $HOME/.vim

@@ -10,4 +10,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:sytastic_javascript_checkers = ['eslint']
+" JavaScript
+let g:syntastic_javascript_checkers = ['eslint']
+
+" C++
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_checkers = ['gcc']

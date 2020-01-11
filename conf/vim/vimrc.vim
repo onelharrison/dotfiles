@@ -74,5 +74,7 @@ nnoremap <C-H> <C-W><C-H>
 " => Plugin config
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+filetype plugin indent on
+
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/syntastic.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/prettier.vim
