@@ -4,4 +4,6 @@
 
 . $HOME/github.com/onelharrison/dotfiles/conf/zsh/bundler.zsh
 
+. $HOME/github.com/onelharrison/dotfiles/conf/zsh/xclip.zsh
+
 . $HOME/github.com/onelharrison/dotfiles/conf/zsh/zshrc_extended

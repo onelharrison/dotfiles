@@ -6,6 +6,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/lib/utils.sh
 
 # Core
+. $SCRIPT_ABS_DIR/lib/xclip_setup.sh
 . $SCRIPT_ABS_DIR/lib/ag_setup.sh
 . $SCRIPT_ABS_DIR/lib/git_setup.sh
 . $SCRIPT_ABS_DIR/lib/tmux_setup.sh
