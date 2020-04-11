@@ -6,6 +6,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/lib/utils.sh
 
 # Core
+. $SCRIPT_ABS_DIR/lib/unzip_setup.sh
 . $SCRIPT_ABS_DIR/lib/xclip_setup.sh
 . $SCRIPT_ABS_DIR/lib/ag_setup.sh
 . $SCRIPT_ABS_DIR/lib/git_setup.sh
@@ -19,5 +20,8 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/lib/javascript_base_setup.sh
 . $SCRIPT_ABS_DIR/lib/python_base_setup.sh
 . $SCRIPT_ABS_DIR/lib/ruby_base_setup.sh
+
+# Other tools
+. $SCRIPT_ABS_DIR/lib/aws_setup.sh
 
 exec $SHELL
