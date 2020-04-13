@@ -38,8 +38,15 @@ set encoding=utf8
 " =>  UI Layout
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Show line numbers
-set number
+" Show absolute line number for current line
+" Show relative line number for surrounding lines
+set number relativenumber
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,WinEnter,InsertLeave,FocusGained * set relativenumber
+  autocmd BufLeave,WinLeave,InsertEnter,FocusLost   * set norelativenumber
+augroup END
 
 " Enable visual autocomplete for command menu
 set wildmenu
