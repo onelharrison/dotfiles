@@ -20,6 +20,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/lib/javascript_base_setup.sh
 . $SCRIPT_ABS_DIR/lib/python_base_setup.sh
 . $SCRIPT_ABS_DIR/lib/ruby_base_setup.sh
+. $SCRIPT_ABS_DIR/lib/go_base_setup.sh
 
 # Other tools
 . $SCRIPT_ABS_DIR/lib/aws_setup.sh
