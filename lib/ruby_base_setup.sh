@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
 
 RBENV_ROOT="$SCRIPT_ABS_DIR/conf/rbenv"
-RBENV_ROOT_PLUGINS=$RBENV_ROOT/plugins
 
 install_rbenv() {
   echo 'INFO: Installing rbenv.'
-  git clone git@github.com:rbenv/rbenv.git $SCRIPT_ABS_DIR/conf/rbenv
+  git clone https://github.com/rbenv/rbenv.git $SCRIPT_ABS_DIR/conf/rbenv
 
   $SCRIPT_ABS_DIR/conf/rbenv/src/configure
   make -C $SCRIPT_ABS_DIR/conf/rbenv/src
@@ -15,6 +14,10 @@ install_rbenv() {
 
   echo "export PATH=\"\$PATH:$RBENV_ROOT/bin\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+
+  $SCRIPT_ABS_DIR/conf/rbenv/bin/rbenv init
+
+  echo 'eval "(rbenv init -)"' >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
   . $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
@@ -38,11 +41,13 @@ check_or_install_ruby_build_dependencies() {
   echo 'INFO: Done checking/installing ruby-build dependencies.'
 }
 
+RBENV_ROOT_PLUGINS=$RBENV_ROOT/plugins
+
 install_rbenv_plugin() {
   echo 'INFO: Installing rbenv ruby-build plugin.'
   mkdir -p $RBENV_ROOT_PLUGINS
-  rm -rf $RBENV_ROOT_PLUGINS/plugins/$1
-  git clone git@github.com:rbenv/$1.git $RBENV_ROOT/plugins/$1
+  rm -rf $RBENV_ROOT_PLUGINS/$2
+  git clone https://github.com/$1/$2.git $RBENV_ROOT_PLUGINS/$2
   echo 'INFO: Done installing rbenv ruby-build plugin.'
 }
 
@@ -51,7 +56,15 @@ echo 'INIT: ruby base setup initiated.'
 if [ ! -d "$RBENV_ROOT" ]; then
   install_rbenv
   check_or_install_ruby_build_dependencies
-  install_rbenv_plugin ruby-build
+  install_rbenv_plugin 'rbenv' 'ruby-build'
+
+  rbenv install 2.5.0
+  rbenv rehash
+  rbenv global 2.5.0
+
+  sudo gem install bundler
+
+  install_rbenv_plugin 'carsomyr' 'rbenv-bundler'
 else
   echo 'SKIP: rbenv is installed.'
 fi
