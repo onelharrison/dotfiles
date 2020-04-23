@@ -19,7 +19,7 @@ install_rbenv() {
 
   echo 'eval "(rbenv init -)"' >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
-  . $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+  . $SCRIPT_ABS_DIR/conf/zsh/zshrc
 
   echo 'INFO: Done installing rbenv.'
 }

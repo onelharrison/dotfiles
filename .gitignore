@@ -7,3 +7,9 @@ conf/rbenv
 **/emacs.d/elpa
 **/emacs.d/eshell
 **/emacs.d/places
+
+# n
+**/conf/n
+
+# zsh
+**/conf/zsh/zshrc_extended
