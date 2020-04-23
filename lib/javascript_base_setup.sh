@@ -13,9 +13,9 @@ PREFIX="$N_PREFIX" make uninstall
 PREFIX="$N_PREFIX" make install
 cd -
 
-rm -rf n
+rm -rf n 2>/dev/null
 
-echo "export PATH=\"\$PATH:$N_PREFIX\"" \
+echo "export PATH=\"\$PATH:$N_PREFIX/bin\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
 . $SCRIPT_ABS_DIR/conf/zsh/zshrc

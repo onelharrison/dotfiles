@@ -1,0 +1,4 @@
+export RBENV_ROOT="/home/lfm/github.com/onelharrison/dotfiles/conf/rbenv"
+export PATH="$PATH:/home/lfm/github.com/onelharrison/dotfiles/conf/rbenv/bin"
+eval "(rbenv init -)"
+export PATH="$PATH:/home/lfm/github.com/onelharrison/dotfiles/conf/n/bin"
