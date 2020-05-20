@@ -12,14 +12,14 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 . $SCRIPT_ABS_DIR/lib/git_setup.sh
 . $SCRIPT_ABS_DIR/lib/tmux_setup.sh
 . $SCRIPT_ABS_DIR/lib/vim_setup.sh
-# . $SCRIPT_ABS_DIR/lib/emacs_setup.sh
+. $SCRIPT_ABS_DIR/lib/emacs_setup.sh
 . $SCRIPT_ABS_DIR/lib/zsh_setup.sh
 
 # Language Environments
-# . $SCRIPT_ABS_DIR/lib/haskell_base_setup.sh
+. $SCRIPT_ABS_DIR/lib/haskell_base_setup.sh
 . $SCRIPT_ABS_DIR/lib/javascript_base_setup.sh
-# . $SCRIPT_ABS_DIR/lib/python_base_setup.sh
-# . $SCRIPT_ABS_DIR/lib/ruby_base_setup.sh
+. $SCRIPT_ABS_DIR/lib/python_base_setup.sh
+. $SCRIPT_ABS_DIR/lib/ruby_base_setup.sh
 . $SCRIPT_ABS_DIR/lib/go_base_setup.sh
 
 # Other tools
