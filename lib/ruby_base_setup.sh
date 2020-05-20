@@ -30,6 +30,7 @@ check_or_install_ruby_build_dependencies() {
   check_or_install bison
   check_or_install build-essential
   check_or_install libssl-dev
+  check_or_install libssl1.0-dev
   check_or_install libyaml-dev
   check_or_install libreadline6-dev
   check_or_install zlib1g-dev
@@ -44,7 +45,7 @@ check_or_install_ruby_build_dependencies() {
 RBENV_ROOT_PLUGINS=$RBENV_ROOT/plugins
 
 install_rbenv_plugin() {
-  echo 'INFO: Installing rbenv ruby-build plugin.'
+  echo "INFO: Installing rbenv $2 plugin."
   mkdir -p $RBENV_ROOT_PLUGINS
   rm -rf $RBENV_ROOT_PLUGINS/$2
   git clone https://github.com/$1/$2.git $RBENV_ROOT_PLUGINS/$2
@@ -62,12 +63,13 @@ if [ ! -d "$RBENV_ROOT" ]; then
   rbenv rehash
   rbenv global 2.5.0
 
-  sudo gem install bundler
-
-  install_rbenv_plugin 'carsomyr' 'rbenv-bundler'
+  # verify rbenv installation
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
 else
   echo 'SKIP: rbenv is installed.'
 fi
+
+install_rbenv_plugin 'rbenv' 'rbenv-vars'
 
 echo 'DONE: ruby base setup completed.'
 echo '--------'
