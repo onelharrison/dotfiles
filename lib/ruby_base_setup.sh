@@ -12,7 +12,10 @@ install_rbenv() {
   echo "export RBENV_ROOT=\"$RBENV_ROOT\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
-  echo "export PATH=\"\$PATH:$RBENV_ROOT/bin\"" \
+  echo "export PATH=\"$RBENV_ROOT/shims:\$PATH\"" \
+      >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+
+  echo "export PATH=\"$RBENV_ROOT/bin:\$PATH\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
   $SCRIPT_ABS_DIR/conf/rbenv/bin/rbenv init
@@ -63,8 +66,12 @@ if [ ! -d "$RBENV_ROOT" ]; then
   rbenv rehash
   rbenv global 2.5.0
 
+  gem install bundler
+  rbenv rehash
+
   # verify rbenv installation
   curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+  curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | zsh
 else
   echo 'SKIP: rbenv is installed.'
 fi
