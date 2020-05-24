@@ -1,6 +1,9 @@
-[submodule "conf/vim/vim/pack/plugins/start/syntastic"]
-	path = conf/vim/vim/pack/plugins/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic
-[submodule "conf/vim/vim/pack/plugins/start/vim-prettier"]
-	path = conf/vim/vim/pack/plugins/start/vim-prettier
-	url = https://github.com/prettier/vim-prettier
+[submodule "conf/vim/vimruntime/pack/plugins/start/syntastic"]
+	path = conf/vim/vimruntime/pack/plugins/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "conf/vim/vimruntime/pack/plugins/start/vim-prettier"]
+	path = conf/vim/vimruntime/pack/plugins/start/vim-prettier
+	url = https://github.com/prettier/vim-prettier.git
+[submodule "conf/vim/vimruntime/pack/plugins/start/ale"]
+	path = conf/vim/vimruntime/pack/plugins/start/ale
+	url = https://github.com/dense-analysis/ale.git

@@ -23,7 +23,7 @@ set hlsearch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enable syntax highlighting
-syntax enable 
+syntax enable
 
 " Set dark background, encourage use of light coloured text
 set background=dark
@@ -83,5 +83,6 @@ nnoremap <C-H> <C-W><C-H>
 
 filetype plugin indent on
 
-so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/syntastic.vim
+" so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/syntastic.vim
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/ale.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/prettier.vim

@@ -13,3 +13,6 @@ conf/rbenv
 
 # zsh
 **/conf/zsh/zshrc_extended
+
+# Python
+.mypy_cache
