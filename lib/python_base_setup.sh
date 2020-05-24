@@ -14,6 +14,7 @@ pip3 install pydocstyle
 pip3 install bandit
 pip3 install mypy
 pip3 install black
+pip3 install isort
 
 echo 'DONE: python base setup completed.'
 echo '--------'

@@ -22,8 +22,7 @@ echo "export PATH=\"\$PATH:$N_PREFIX/bin\"" \
 
 n lts
 
+sudo npm install -g prettier
+
 echo 'DONE: javascript setup completed.'
 echo '--------'
-
-# Node packages 
-# npm install -g prettier

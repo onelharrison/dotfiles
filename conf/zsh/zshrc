@@ -1,3 +1,5 @@
+export PATH="/home/odev/.local/bin:$PATH"
+
 . $HOME/github.com/onelharrison/dotfiles/conf/zsh/git.zsh
 
 . $HOME/github.com/onelharrison/dotfiles/conf/zsh/rails.zsh
