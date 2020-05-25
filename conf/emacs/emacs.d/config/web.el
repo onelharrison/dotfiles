@@ -5,8 +5,6 @@
 (use-package js2-mode)
 
 (use-package prettier-js
-  :config
-  (add-hook 'web-mode-hook 'prettier-js-mode)
-  (add-hook 'js2-mode-hook 'prettier-js-mode))
-
-
+	     :config
+	     (add-hook 'web-mode-hook 'prettier-js-mode)
+	     (add-hook 'js2-mode-hook 'prettier-js-mode))

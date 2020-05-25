@@ -28,7 +28,7 @@
 ;; -----------------
 
 (dolist
-  (file 
+  (file
     (directory-files
       (concat (expand-file-name user-emacs-directory) "config")
       t
@@ -36,4 +36,3 @@
     )
   )
   (load file))
-
