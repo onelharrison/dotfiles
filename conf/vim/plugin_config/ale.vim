@@ -18,8 +18,12 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " - flake8
 " - pydocstyle
 "
+" JavaScript
+" - eslint (default: enabled)
+"
 let g:ale_linters = {
 \   'python': ['pylint', 'bandit', 'mypy'],
+\   'javascript': ['eslint']
 \}
 
 " Fixers
@@ -29,9 +33,13 @@ let g:ale_linters = {
 " - black (default: enabled)
 " - isort (default: enabled)
 "
+" JavaScript
+" - eslint (default: enabled)
+"
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort'],
+\   'javascript': ['eslint', 'prettier']
 \}
 
 let g:ale_fix_on_save = 1

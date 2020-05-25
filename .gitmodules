@@ -7,3 +7,6 @@
 [submodule "conf/vim/vimruntime/pack/plugins/start/ale"]
 	path = conf/vim/vimruntime/pack/plugins/start/ale
 	url = https://github.com/dense-analysis/ale.git
+[submodule "conf/vim/vimruntime/pack/plugins/start/vim-polyglot"]
+	path = conf/vim/vimruntime/pack/plugins/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot

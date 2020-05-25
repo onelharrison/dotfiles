@@ -61,8 +61,8 @@ set splitright
 " Show column indicator for cursor
 set cursorcolumn
 
-" Show column at column 80
-set colorcolumn=80
+" Show column marker if line gets longer than 80 chars
+call matchadd('ColorColumn', '\%81v', 100)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Navigation
