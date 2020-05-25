@@ -35,6 +35,7 @@ let g:ale_linters = {
 "
 " JavaScript
 " - eslint (default: enabled)
+" - prettier (default: enabled)
 "
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
