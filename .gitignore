@@ -8,6 +8,9 @@ conf/emacs/emacs.d/
 !conf/emacs/emacs.d/init.el
 !conf/emacs/emacs.d/config/
 
+# Vim
+*.swo
+
 # Python
 .mypy_cache
 
