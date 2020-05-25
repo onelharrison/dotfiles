@@ -1,5 +1,0 @@
-export RBENV_ROOT="/home/odev/github.com/onelharrison/dotfiles/conf/rbenv"
-export PATH="/home/odev/github.com/onelharrison/dotfiles/conf/rbenv/shims:$PATH"
-export PATH="/home/odev/github.com/onelharrison/dotfiles/conf/rbenv/bin:$PATH"
-eval "(rbenv init -)"
-export PATH="$PATH:/home/odev/github.com/onelharrison/dotfiles/conf/n/bin"
