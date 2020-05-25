@@ -8,6 +8,7 @@ node_modules/
 **/emacs.d/elpa
 **/emacs.d/eshell
 **/emacs.d/places
+.lsp-*
 
 # Python
 .mypy_cache
