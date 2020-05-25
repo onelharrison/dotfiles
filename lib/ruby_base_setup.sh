@@ -62,11 +62,13 @@ if [ ! -d "$RBENV_ROOT" ]; then
   check_or_install_ruby_build_dependencies
   install_rbenv_plugin 'rbenv' 'ruby-build'
 
-  rbenv install 2.5.0
+  rbenv install 2.7.1
   rbenv rehash
-  rbenv global 2.5.0
+
+  rbenv global 2.7.1
 
   gem install bundler
+  gem install solargraph
   rbenv rehash
 
   # verify rbenv installation

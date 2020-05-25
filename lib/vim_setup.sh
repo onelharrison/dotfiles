@@ -37,7 +37,10 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-go \           # golang lsp
   coc-json \         # json extension
   coc-tsserver \     # javascript, typescript lsp
-  coc-solargraph     # ruby lsp
+  coc-solargraph \   # ruby lsp
+  coc-html \
+  coc-css \
+  coc-yaml
 
 echo 'DONE: vim setup completed.'
 echo '--------'

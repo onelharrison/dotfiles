@@ -4,11 +4,9 @@ node_modules/
 # Emacs
 *~
 \.emacs.desktop
-**/emacs.d/straight
-**/emacs.d/elpa
-**/emacs.d/eshell
-**/emacs.d/places
-.lsp-*
+conf/emacs/emacs.d/
+!conf/emacs/emacs.d/init.el
+!conf/emacs/emacs.d/config/
 
 # Python
 .mypy_cache
@@ -23,8 +21,5 @@ conf/n
 conf/zsh/zshrc_extended
 
 # coc
-**/coc/extensions/
-**/coc/history.json
-**/coc/memos.json
-**/coc/mru
-**/coc/lists
+conf/coc/
+!conf/coc/coc-settings.json
