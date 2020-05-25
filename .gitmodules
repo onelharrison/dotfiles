@@ -1,6 +1,3 @@
-[submodule "conf/vim/vimruntime/pack/plugins/start/syntastic"]
-	path = conf/vim/vimruntime/pack/plugins/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule "conf/vim/vimruntime/pack/plugins/start/ale"]
 	path = conf/vim/vimruntime/pack/plugins/start/ale
 	url = https://github.com/dense-analysis/ale.git
