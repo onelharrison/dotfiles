@@ -85,4 +85,5 @@ filetype plugin indent on
 
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/ale.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/coc.vim
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-go.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/prettier.vim
