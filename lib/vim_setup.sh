@@ -32,12 +32,12 @@ fi
 check_or_install npm
 
 npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod \
-  coc-marketplace \  # coc extension marketplace
-  coc-python \       # python lsp
-  coc-go \           # golang lsp
-  coc-json \         # json extension
-  coc-tsserver \     # javascript, typescript lsp
-  coc-solargraph \   # ruby lsp
+  coc-marketplace \
+  coc-python \
+  coc-go \
+  coc-json \
+  coc-tsserver \
+  coc-solargraph \
   coc-html \
   coc-css \
   coc-yaml

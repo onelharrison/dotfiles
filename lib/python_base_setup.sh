@@ -5,6 +5,8 @@ echo 'INIT: python setup initiated.'
 check_or_install python3
 check_or_install python3-pip
 
+pip3 install --upgrade pip
+
 # virtual env and package management
 pip3 install pipenv
 
