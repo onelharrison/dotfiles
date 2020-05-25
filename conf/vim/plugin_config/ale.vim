@@ -21,6 +21,9 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " JavaScript
 " - eslint (default: enabled)
 "
+" JSON
+" - jsonlint (default: enabled)
+"
 " Haskell
 " - hlint (default: enabled)
 "
@@ -32,6 +35,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 let g:ale_linters = {
 \   'python': ['pylint', 'bandit', 'mypy'],
 \   'javascript': ['eslint'],
+\   'json': ['jsonlint'],
 \   'haskell': ['hlint'],
 \   'go': ['gofmt', 'golint', 'govet']
 \}
@@ -47,6 +51,9 @@ let g:ale_linters = {
 " - eslint (default: enabled)
 " - prettier (default: enabled)
 "
+" JSON
+" - prettier (default: enabled)
+"
 " Haskell
 " - hindent (default: enabled)
 "
@@ -58,6 +65,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'python': ['black', 'isort'],
 \   'javascript': ['eslint', 'prettier'],
+\   'json': ['prettier'],
 \   'haskell': ['hindent', 'stylish-haskell'],
 \   'go': ['gofmt', 'goimports']
 \}

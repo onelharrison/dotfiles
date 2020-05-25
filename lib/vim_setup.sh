@@ -33,6 +33,7 @@ check_or_install npm
 
 npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --only=prod \
   coc-marketplace \
+  coc-explorer \
   coc-python \
   coc-go \
   coc-json \
