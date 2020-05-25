@@ -42,5 +42,7 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-css \
   coc-yaml
 
+cd -
+
 echo 'DONE: vim setup completed.'
 echo '--------'
