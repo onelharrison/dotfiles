@@ -4,3 +4,6 @@
 [submodule "conf/vim/vimruntime/pack/plugins/start/vim-polyglot"]
 	path = conf/vim/vimruntime/pack/plugins/start/vim-polyglot
 	url = https://github.com/sheerun/vim-polyglot
+[submodule "conf/vim/vimruntime/pack/plugins/start/vim-go"]
+	path = conf/vim/vimruntime/pack/plugins/start/vim-go
+	url = https://github.com/fatih/vim-go.git

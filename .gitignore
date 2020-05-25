@@ -1,4 +1,5 @@
-conf/rbenv
+# node/js
+node_modules/
 
 # Emacs
 *~
@@ -8,11 +9,21 @@ conf/rbenv
 **/emacs.d/eshell
 **/emacs.d/places
 
-# n
-**/conf/n
-
-# zsh
-**/conf/zsh/zshrc_extended
-
 # Python
 .mypy_cache
+
+# rbenv
+conf/rbenv
+
+# n
+conf/n
+
+# zsh
+conf/zsh/zshrc_extended
+
+# coc
+**/coc/extensions/
+**/coc/history.json
+**/coc/memos.json
+**/coc/mru
+**/coc/lists

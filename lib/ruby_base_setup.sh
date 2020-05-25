@@ -80,4 +80,3 @@ install_rbenv_plugin 'rbenv' 'rbenv-vars'
 
 echo 'DONE: ruby base setup completed.'
 echo '--------'
-
