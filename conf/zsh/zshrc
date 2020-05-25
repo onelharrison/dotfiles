@@ -1,4 +1,4 @@
-export PATH="/home/odev/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 . $HOME/github.com/onelharrison/dotfiles/conf/zsh/git.zsh
 
