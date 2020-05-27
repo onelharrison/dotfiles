@@ -6,4 +6,3 @@ check_or_install silversearcher-ag
 
 echo 'DONE: ag setup completed.'
 echo '--------'
-

@@ -20,6 +20,9 @@ conf/rbenv
 # n
 conf/n
 
+# npm
+conf/npm/packages
+
 # zsh
 conf/zsh/zshrc_extended
 
