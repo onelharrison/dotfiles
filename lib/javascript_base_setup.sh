@@ -7,6 +7,7 @@ echo 'INIT: javascript setup initiated.'
 git clone https://github.com/tj/n.git 2>/dev/null
 
 export N_PREFIX="$SCRIPT_ABS_DIR/conf/n"
+echo "export N_PREFIX=\"$SCRIPT_ABS_DIR/conf/n\"" >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
 cd n
 PREFIX="$N_PREFIX" make uninstall
@@ -30,14 +31,14 @@ ln -s $SCRIPT_ABS_DIR/conf/npm/npmrc ~/.npmrc
 NPM_PACKAGES=$SCRIPT_ABS_DIR/conf/npm/packages
 mkdir -p $NPM_PACKAGES
 
-echo "NPM_PACKAGES=$NPM_PACKAGES" >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+echo "export NPM_PACKAGES=\"$NPM_PACKAGES\"" >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
 npm config set prefix $NPM_PACKAGES
 
-echo "NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\"" \
+echo "export NODE_PATH=\"\$NPM_PACKAGES/lib/node_modules:\$NODE_PATH\"" \
   >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
-echo "PATH=\"\$NPM_PACKAGES/bin:\$PATH\"" \
+echo "export PATH=\"\$NPM_PACKAGES/bin:\$PATH\"" \
   >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
 . $SCRIPT_ABS_DIR/conf/zsh/zshrc
