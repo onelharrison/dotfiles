@@ -29,3 +29,6 @@ conf/zsh/zshrc_extended
 # coc
 conf/coc/
 !conf/coc/coc-settings.json
+
+# kaggle
+conf/kaggle/kaggle.json
