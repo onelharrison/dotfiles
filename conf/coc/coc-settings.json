@@ -8,11 +8,12 @@
   },
   "languageserver": {
     "haskell": {
-      "command": "hie-wrapper",
+      "command": "ghcide",
       "args": ["--lsp"],
       "rootPatterns": [
         "*.cabal",
-        "stack.yaml",
+        ".stack.yaml",
+        ".hie-bios",
         "cabal.project",
         "package.yaml"
       ],
