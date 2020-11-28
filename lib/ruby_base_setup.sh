@@ -4,10 +4,10 @@ RBENV_ROOT="$SCRIPT_ABS_DIR/conf/rbenv"
 
 install_rbenv() {
   echo 'INFO: Installing rbenv.'
-  git clone https://github.com/rbenv/rbenv.git $SCRIPT_ABS_DIR/conf/rbenv
+  git clone https://github.com/rbenv/rbenv.git $RBENV_ROOT
 
   $SCRIPT_ABS_DIR/conf/rbenv/src/configure
-  make -C $SCRIPT_ABS_DIR/conf/rbenv/src
+  make -C $RBENV_ROOT/src
 
   echo "export RBENV_ROOT=\"$RBENV_ROOT\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended

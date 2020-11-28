@@ -18,6 +18,11 @@ stack --resolver lts-14.22 install hindent
 # =======================
 stack install hlint
 
+# Install haskell dev tools
+# =========================
+stack install hoogle
+hoogle generate
+
 # TODO: Migrate to haskell language server when project is more mature
 # (https://github.com/haskell/haskell-language-server)
 sudo apt install libicu-dev libtinfo-dev libgmp-dev # hie dependencies

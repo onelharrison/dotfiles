@@ -9,6 +9,8 @@ sudo ./aws/install
 rm -rf awscliv2.zip
 rm -rf ./aws
 
+rm -rf $HOME/.aws
+ln -s $SCRIPT_ABS_DIR/conf/aws $HOME/.aws
+
 echo 'DONE: awscli setup completed.'
 echo '--------'
-

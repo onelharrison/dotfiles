@@ -1,6 +1,12 @@
 # node/js
 node_modules/
 
+# npm
+conf/npm
+
+# n
+conf/n
+
 # Emacs
 *~
 \.emacs.desktop
@@ -14,14 +20,11 @@ conf/emacs/emacs.d/
 # Python
 .mypy_cache
 
+# pyenv
+conf/pyenv
+
 # rbenv
 conf/rbenv
-
-# n
-conf/n
-
-# npm
-conf/npm
 
 # zsh
 conf/zsh/zshrc_extended
