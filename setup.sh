@@ -7,7 +7,7 @@ set -o errexit
 # which provides GNU readlink behavior
 if [ -x "$(command -v greadlink)" ]; then
   export SCRIPT_ABS_PATH=$(greadlink -f $0)
-elif [ -x "$(command -v readlink)" ]; then 
+elif [ -x "$(command -v readlink)" ]; then
   export SCRIPT_ABS_PATH=$(readlink -f $0)
 fi
 
@@ -41,3 +41,6 @@ for lang in ${langs[@]}; do
 done
 
 cd $SCRIPT_ABS_DIR
+
+git submodule init
+git submodule update
