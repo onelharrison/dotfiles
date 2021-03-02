@@ -7,6 +7,12 @@
     "v": "open:vsplit"
   },
   "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"],
+      "ignoredRootPaths": ["~"]
+    },
     "haskell": {
       "command": "ghcide",
       "args": ["--lsp"],
