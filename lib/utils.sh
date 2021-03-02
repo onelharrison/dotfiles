@@ -8,6 +8,8 @@ install_software() {
   if [ -x "$(command -v apt-get)" ]; then
     sudo apt-get update
     sudo apt-get install $1 -y
+  elif [ -x "$(command -v brew)" ]; then
+    brew install $1
   fi
 }
 
