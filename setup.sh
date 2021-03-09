@@ -1,29 +1,46 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
-export SCRIPT_ABS_PATH=$(readlink -f $0)
+set -o errexit
+
+# readlink on macos differs from GNU readlink
+# "brew install coreutils" provides greadlink
+# which provides GNU readlink behavior
+if [ -x "$(command -v greadlink)" ]; then
+  export SCRIPT_ABS_PATH=$(greadlink -f $0)
+elif [ -x "$(command -v readlink)" ]; then
+  export SCRIPT_ABS_PATH=$(readlink -f $0)
+fi
+
 export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 
 . $SCRIPT_ABS_DIR/lib/utils.sh
 
-# Core
-. $SCRIPT_ABS_DIR/lib/unzip_setup.sh
-. $SCRIPT_ABS_DIR/lib/xclip_setup.sh
-. $SCRIPT_ABS_DIR/lib/ag_setup.sh
-. $SCRIPT_ABS_DIR/lib/jq_setup.sh
-. $SCRIPT_ABS_DIR/lib/git_setup.sh
-. $SCRIPT_ABS_DIR/lib/tmux_setup.sh
-. $SCRIPT_ABS_DIR/lib/vim_setup.sh
-. $SCRIPT_ABS_DIR/lib/emacs_setup.sh
-. $SCRIPT_ABS_DIR/lib/zsh_setup.sh
+apps=(unzip
+      xclip
+      ag
+      jq
+      git
+      tmux
+      vim
+      emacs
+      zsh
+      aws)
 
-# Language Environments
-. $SCRIPT_ABS_DIR/lib/haskell_base_setup.sh
-. $SCRIPT_ABS_DIR/lib/javascript_base_setup.sh
-. $SCRIPT_ABS_DIR/lib/python_base_setup.sh
-. $SCRIPT_ABS_DIR/lib/ruby_base_setup.sh
-. $SCRIPT_ABS_DIR/lib/go_base_setup.sh
+for app in ${apps[@]}; do
+  . $SCRIPT_ABS_DIR/lib/${app}_setup.sh
+done
 
-# Other tools
-. $SCRIPT_ABS_DIR/lib/aws_setup.sh
+langs=(haskell
+       javascript
+       python
+       ruby
+       golang)
+
+for lang in ${langs[@]}; do
+  . $SCRIPT_ABS_DIR/lib/${lang}_base_setup.sh
+done
 
 cd $SCRIPT_ABS_DIR
+
+git submodule init
+git submodule update

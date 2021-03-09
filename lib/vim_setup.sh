@@ -41,7 +41,8 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-solargraph \
   coc-html \
   coc-css \
-  coc-yaml
+  coc-yaml \
+  coc-sh
 
 cd -
 
