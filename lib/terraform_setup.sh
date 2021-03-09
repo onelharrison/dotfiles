@@ -1,18 +1,32 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 echo 'INIT: terraform setup initiated.'
 
-VERSION=0.14.7
+TF_VERSION=0.14.7
+TF_LSP_VERSION=0.0.11-beta2
+INSTALL_DIR="$SCRIPT_ABS_DIR/tmp/terraform"
 
-wget "https://releases.hashicorp.com/terraform/$VERSION/terraform_${VERSION}_linux_amd64.zip"
-unzip "terraform_${VERSION}_linux_amd64.zip"
-sudo mv terraform /usr/local/bin/
+mkdir -p $INSTALL_DIR
 
-# Clean up working directory
-rm "terraform_${VERSION}_linux_amd64.zip"
+# Install terraform
+wget -O "$INSTALL_DIR/terraform_${TF_VERSION}_linux_amd64.zip" \
+	"https://releases.hashicorp.com/terraform/$TF_VERSION/terraform_${TF_VERSION}_linux_amd64.zip" && \
+	cd $INSTALL_DIR && \
+	unzip "$INSTALL_DIR/terraform_${TF_VERSION}_linux_amd64.zip" && \
+	mv terraform $SCRIPT_ABS_DIR/bin/ && \
+        terraform version && \
+	cd -
 
-# Verify installation
-terraform version
+# Install terraform-lsp
+wget -O "$INSTALL_DIR/terraform-lsp_${TF_LSP_VERSION}_linux_amd64.tar.gz" \
+	"https://github.com/juliosueiras/terraform-lsp/releases/download/v${TF_LSP_VERSION}/terraform-lsp_${TF_LSP_VERSION}_linux_amd64.tar.gz" && \
+	cd $INSTALL_DIR && \
+	tar -xvf "terraform-lsp_${TF_LSP_VERSION}_linux_amd64.tar.gz" && \
+	mv terraform-lsp $SCRIPT_ABS_DIR/bin/  && \
+	cd -
+
+# Clean up install directory
+rm -rf $INSTALL_DIR
 
 echo 'DONE: terraform setup completed.'
 echo '--------'

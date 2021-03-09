@@ -13,6 +13,12 @@
       "filetypes": ["sh"],
       "ignoredRootPaths": ["~"]
     },
+    "terraform": {
+      "command": "terraform-lsp",
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
+    },
     "haskell": {
       "command": "ghcide",
       "args": ["--lsp"],

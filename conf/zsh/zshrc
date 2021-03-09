@@ -1,8 +1,10 @@
+export DOTFILES_ROOT="$HOME/github.com/onelharrison"
+export PATH="$DOTFILES_ROOT/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
-. $HOME/github.com/onelharrison/dotfiles/conf/zsh/git.zsh
+. $DOTFILES_ROOT/conf/zsh/git.zsh
 
 # autoload -Uz vcs_info
 # precmd_vcs_info() { vcs_info }
@@ -12,13 +14,13 @@ export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 # zstyle ':vcs_info:git:*' formats '%F{117}(%b) %f%r'
 # zstyle ':vcs_info:*' enable git
 
-. $HOME/github.com/onelharrison/dotfiles/conf/zsh/rails.zsh
+. $DOTFILES_ROOT/conf/zsh/rails.zsh
 
-. $HOME/github.com/onelharrison/dotfiles/conf/zsh/bundler.zsh
+. $DOTFILES_ROOT/conf/zsh/bundler.zsh
 
-. $HOME/github.com/onelharrison/dotfiles/conf/zsh/xclip.zsh
+. $DOTFILES_ROOT/conf/zsh/xclip.zsh
 
-. $HOME/github.com/onelharrison/dotfiles/conf/zsh/zshrc_extended
+. $DOTFILES_ROOT/conf/zsh/zshrc_extended
 
 # Enable WSL 2 + VcXsrv
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0

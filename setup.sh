@@ -24,7 +24,8 @@ apps=(unzip
       vim
       emacs
       zsh
-      aws)
+      aws
+      terraform)
 
 for app in ${apps[@]}; do
   . $SCRIPT_ABS_DIR/lib/${app}_setup.sh

@@ -35,6 +35,7 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-marketplace \
   coc-explorer \
   coc-python \
+  coc-jedi \
   coc-go \
   coc-json \
   coc-tsserver \
@@ -42,7 +43,8 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-html \
   coc-css \
   coc-yaml \
-  coc-sh
+  coc-sh \
+  coc-spell-checker
 
 cd -
 
