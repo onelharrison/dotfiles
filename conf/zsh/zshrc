@@ -1,10 +1,14 @@
-export DOTFILES_ROOT="$HOME/github.com/onelharrison"
+export DOTFILES_ROOT="$HOME/github.com/onelharrison/dotfiles"
 export PATH="$DOTFILES_ROOT/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
-. $DOTFILES_ROOT/conf/zsh/git.zsh
+for FILE in "$DOTFILES_ROOT/conf/*"; do
+  if [ -d $FILE ]; then
+    . $FILE/*.zsh
+  fi
+done
 
 # autoload -Uz vcs_info
 # precmd_vcs_info() { vcs_info }
@@ -18,12 +22,10 @@ export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
 . $DOTFILES_ROOT/conf/zsh/bundler.zsh
 
-. $DOTFILES_ROOT/conf/zsh/xclip.zsh
-
 . $DOTFILES_ROOT/conf/zsh/zshrc_extended
 
 # Enable WSL 2 + VcXsrv
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
