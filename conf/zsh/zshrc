@@ -4,10 +4,8 @@ export PATH="$HOME/.local/bin:$PATH"
 
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
-for FILE in "$DOTFILES_ROOT/conf/*"; do
-  if [ -d $FILE ]; then
-    . $FILE/*.zsh
-  fi
+for FILE in $(find "$DOTFILES_ROOT/conf" -name "*.zsh" -type f); do
+  . $FILE
 done
 
 # autoload -Uz vcs_info
@@ -22,7 +20,9 @@ done
 
 . $DOTFILES_ROOT/conf/zsh/bundler.zsh
 
-. $DOTFILES_ROOT/conf/zsh/zshrc_extended
+if [ -f $DOTFILES_ROOT/conf/zsh/zshrc_extended ]; then
+  . $DOTFILES_ROOT/conf/zsh/zshrc_extended
+fi
 
 # Enable WSL 2 + VcXsrv
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
