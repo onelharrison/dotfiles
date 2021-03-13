@@ -9,3 +9,9 @@ git clone --recurse-submodules https://github.com/onelharrison/dotfiles.git
 cd dotfiles
 ./setup.sh
 ```
+
+## TODO
+* racket install
+* racket language server
+* Groovy (Jenkinsfile) linter
+* Docker (Dockerfile) linter
