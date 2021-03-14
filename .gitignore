@@ -37,6 +37,9 @@ conf/vim/vimruntime/pack/plugins/start/coc.nvim-release/
 # kaggle
 conf/kaggle/kaggle.json
 
+# aws
+conf/aws/
+
 # other
 tmp/
 bin/
