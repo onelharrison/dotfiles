@@ -59,7 +59,7 @@ set splitbelow
 set splitright
 
 " Show column indicator for cursor
-set cursorcolumn
+" set cursorcolumn
 
 " Show column marker if line gets longer than 80 chars
 call matchadd('ColorColumn', '\%81v', 100)
@@ -86,3 +86,4 @@ filetype plugin indent on
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/ale.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/coc.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-go.vim
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-hardtime.vim

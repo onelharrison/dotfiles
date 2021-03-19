@@ -7,3 +7,6 @@
 [submodule "conf/vim/vimruntime/pack/plugins/start/vim-go"]
 	path = conf/vim/vimruntime/pack/plugins/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "conf/vim/vimruntime/pack/plugins/start/vim-hardtime"]
+	path = conf/vim/vimruntime/pack/plugins/start/vim-hardtime
+	url = https://github.com/takac/vim-hardtime
