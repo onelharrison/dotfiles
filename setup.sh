@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-set -o errexit
+# set -o errexit
 
 # readlink on macos differs from GNU readlink
 # "brew install coreutils" provides greadlink
@@ -15,28 +15,12 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 
 . $SCRIPT_ABS_DIR/lib/utils.sh
 
-apps=(unzip
-      xclip
-      ag
-      jq
-      git
-      tmux
-      vim
-      emacs
-      zsh
-      aws
-      terraform)
-
+apps=(git tmux vim zsh)
 for app in ${apps[@]}; do
   . $SCRIPT_ABS_DIR/lib/${app}_setup.sh
 done
 
-langs=(haskell
-       javascript
-       python
-       ruby
-       golang)
-
+langs=(javascript python)
 for lang in ${langs[@]}; do
   . $SCRIPT_ABS_DIR/lib/${lang}_base_setup.sh
 done

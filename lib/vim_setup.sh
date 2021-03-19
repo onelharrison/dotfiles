@@ -9,9 +9,8 @@ mv $HOME/.vimrc $HOME/.vimrc.old 2>/dev/null
 ln -s $SCRIPT_ABS_DIR/conf/vim/vimrc.vim $HOME/.vimrc
 
 # vimruntime
-rm -rf $HOME/.vim.old/ 2>/dev/null
-mv $HOME/.vim/ $HOME/.vim.old/ 2>/dev/null
-rm -rf $HOME/.vim
+rm $HOME/.vim.old 2>/dev/null
+mv $HOME/.vim $HOME/.vim.old 2>/dev/null
 ln -s $SCRIPT_ABS_DIR/conf/vim/vimruntime/ $HOME/.vim
 
 # coc

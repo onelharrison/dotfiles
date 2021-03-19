@@ -65,10 +65,6 @@ python -m pip install mypy
 python -m pip install black
 python -m pip install isort
 
-# data science stuff
-python -m pip install kaggle
-mv $HOME/.kaggle $HOME/.kaggle.old 2>/dev/null
-ln -s $SCRIPT_ABS_DIR/conf/kaggle $HOME/.kaggle
 
 echo 'DONE: python base setup completed.'
 echo '--------'
