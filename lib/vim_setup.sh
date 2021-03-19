@@ -38,6 +38,7 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-go \
   coc-json \
   coc-tsserver \
+  coc-groovy \
   coc-solargraph \
   coc-html \
   coc-css \
