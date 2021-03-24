@@ -1,5 +1,6 @@
 export DOTFILES_ROOT="$HOME/github.com/onelharrison/dotfiles"
 export PATH="$DOTFILES_ROOT/bin:$PATH"
+export PATH="$DOTFILES_ROOT/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
