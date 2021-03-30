@@ -3,6 +3,21 @@
 set -e
 
 AWS_MFA_CONFIG_PATH="$HOME/github.com/onelharrison/dotfiles/conf/aws/.aws-mfa-config.json"
+
+# Sample contents of .aws-mfa-config.json
+#
+# [
+#     {
+#         "profile": "mfa",
+#         "jump_profile": "default",
+#         "output": "json",
+#         "region": "us-east-2",
+#         "duration_seconds": "",
+#         "serial_number": "arn:aws:iam::123456789012:mfa/user",
+#
+#     }
+# ]
+
 AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
 usage() {
@@ -42,9 +57,9 @@ if [ "$serial_number" == "null" ]; then
     exit 1
 fi
 
-use_profile=$(echo $PROFILE_CONFIG | jq -r '.use_profile')
-if [ "$use_profile" == "null" ]; then
-    use_profile="default"
+jump_profile=$(echo $PROFILE_CONFIG | jq -r '.jump_profile')
+if [ "$jump_profile" == "null" ]; then
+    jump_profile="default"
 fi
 
 duration_seconds=$(echo $PROFILE_CONFIG | jq -r '.duration_seconds')
@@ -73,7 +88,7 @@ jq
 eval $(aws sts get-session-token \
 	--serial-number "$serial_number" \
 	--token-code "$TOKEN" \
-	--profile "$use_profile" \
+	--profile "$jump_profile" \
 	--duration-seconds "$duration_seconds" \
 	--query "Credentials" \
 	| jq -r "$jq_aws_creds_to_configs")
