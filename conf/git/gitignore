@@ -26,8 +26,10 @@ auto-save-list
 *.hi
 .stack-work/
 
+# wget
+wget-log
+
 # Compiled source #
 ###################
 *.o
 *.class
-
