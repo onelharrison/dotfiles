@@ -21,7 +21,17 @@ AWS_MFA_CONFIG_PATH="$HOME/github.com/onelharrison/dotfiles/conf/aws/.aws-mfa-co
 AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
 usage() {
-    echo "Usage: $0 [-p PROFILE] [-t TOKEN]" 1>&2
+cat <<-USAGE
+Usage: $(basename "$0") [-p PROFILE] [-t TOKEN] [-o]
+
+Options:
+      -h                          Displays this message
+      -p [PROFILE]                The MFA profile to configure
+      -t [TOKEN]                  The token code for the MFA profile
+      -o [OUTPUT_LOCATION]        Output location for the MFA profile credentials after they're configured in ~/.aws/credentials
+                                  Valid values include [none | stdout | <filename>]. Defaults to "none" which doesn't output
+                                  the MFA credentials anywhere (except in ~/.aws/credentials to configure the profile)
+USAGE
 }
 
 exit_abnormal() {
@@ -29,15 +39,24 @@ exit_abnormal() {
     exit 1
 }
 
-optstring=":p:t:"
+optstring=":hp:t:o:"
+
+OUTPUT_LOCATION="none"
 
 while getopts ${optstring} opt; do
     case "${opt}" in
+	h)
+	    usage
+	    exit 0
+	    ;;
         p)
 	    PROFILE=${OPTARG}
 	    ;;
         t)
 	    TOKEN=${OPTARG}
+	    ;;
+	o)
+            OUTPUT_LOCATION=${OPTARG}
 	    ;;
 	:)
 	    echo "$0: Must supply an argument to -$OPTARG." >&2
@@ -78,22 +97,50 @@ if [ "$output" == "null" ]; then
     output="json"
 fi
 
-jq_aws_creds_to_configs=$(cat <<jq
+jq_extract_lower_aws_creds=$(cat <<jq
 { "aws_access_key_id": .AccessKeyId, "aws_secret_access_key": .SecretAccessKey, "aws_session_token": .SessionToken }
+jq
+)
+
+jq_extract_upper_aws_creds=$(cat <<jq
+{ "AWS_ACCESS_KEY_ID": .AccessKeyId, "AWS_SECRET_ACCESS_KEY": .SecretAccessKey, "AWS_SESSION_TOKEN": .SessionToken }
+jq
+)
+
+jq_convert_aws_creds_to_configs=$(cat <<jq
+$jq_extract_lower_aws_creds
 | [ to_entries[] | "aws configure set profile.$PROFILE.\(.key) \(.value);" ]
 | join("\n")
 jq
 )
 
-eval $(aws sts get-session-token \
+jq_convert_aws_creds_to_env_vars=$(cat <<jq
+$jq_extract_upper_aws_creds
+| [ to_entries[] | "\(.key)=\(.value)" ]
+| join("\n")
+jq
+)
+
+aws_creds=$(aws sts get-session-token \
 	--serial-number "$serial_number" \
 	--token-code "$TOKEN" \
 	--profile "$jump_profile" \
 	--duration-seconds "$duration_seconds" \
-	--query "Credentials" \
-	| jq -r "$jq_aws_creds_to_configs")
+	--query "Credentials")
+
+# configure profile
+eval $(echo "$aws_creds"| jq -r "$jq_convert_aws_creds_to_configs")
 
 aws configure set "profile.$PROFILE.region" "$region"
 aws configure set "profile.$PROFILE.output" "$output"
+
+# output mfa profile credentials
+if [ "$OUTPUT_LOCATION" == "none" ]; then
+    : # no op
+elif [ "$OUTPUT_LOCATION" == "stdout" ]; then
+    echo  "$aws_creds" | jq -r "$jq_convert_aws_creds_to_env_vars"
+else
+    echo  "$aws_creds" | jq -r "$jq_convert_aws_creds_to_env_vars" > "$OUTPUT_LOCATION"
+fi
 
 exit 0
