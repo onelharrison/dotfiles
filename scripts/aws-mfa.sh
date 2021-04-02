@@ -22,7 +22,7 @@ AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
 usage() {
 cat <<-USAGE
-Usage: $(basename "$0") [-p PROFILE] [-t TOKEN] [-o]
+Usage: $(basename "$0") [-p PROFILE] [-t TOKEN] [-o OUTPUT_LOCATION]
 
 Options:
       -h                          Displays this message
