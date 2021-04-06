@@ -2,9 +2,11 @@
 
 set -e
 
-AWS_MFA_CONFIG_PATH="$HOME/github.com/onelharrison/dotfiles/conf/aws/.aws-mfa-config.json"
+AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
-# Sample contents of .aws-mfa-config.json
+AWS_MFA_CONFIG_PATH="$HOME/.aws/aws-mfa-config.json"
+
+# Sample contents of ~/.aws/aws-mfa-config.json
 #
 # [
 #     {
@@ -17,8 +19,6 @@ AWS_MFA_CONFIG_PATH="$HOME/github.com/onelharrison/dotfiles/conf/aws/.aws-mfa-co
 #
 #     }
 # ]
-
-AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
 usage() {
 cat <<-USAGE
