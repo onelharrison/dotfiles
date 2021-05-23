@@ -13,3 +13,9 @@
 [submodule "conf/vim/vimruntime/pack/plugins/start/vim-solidity"]
 	path = conf/vim/vimruntime/pack/plugins/start/vim-solidity
 	url = https://github.com/tomlion/vim-solidity.git
+[submodule "conf/vim/vimruntime/pack/plugins/start/lightline"]
+	path = conf/vim/vimruntime/pack/plugins/start/lightline
+	url = https://github.com/itchyny/lightline.vim
+[submodule "conf/vim/vimruntime/pack/colorschemes/opt/onedark.vim"]
+	path = conf/vim/vimruntime/pack/colorschemes/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
