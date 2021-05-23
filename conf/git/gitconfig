@@ -4,3 +4,4 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	whitespace = cr-at-eol

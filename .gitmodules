@@ -10,3 +10,6 @@
 [submodule "conf/vim/vimruntime/pack/plugins/start/vim-hardtime"]
 	path = conf/vim/vimruntime/pack/plugins/start/vim-hardtime
 	url = https://github.com/takac/vim-hardtime
+[submodule "conf/vim/vimruntime/pack/plugins/start/vim-solidity"]
+	path = conf/vim/vimruntime/pack/plugins/start/vim-solidity
+	url = https://github.com/tomlion/vim-solidity.git
