@@ -6,16 +6,16 @@ AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
 AWS_MFA_CONFIG_PATH="$HOME/.aws/mfa-config.json"
 
-# Sample contents of ~/.aws/aws-mfa-config.json
+# Sample contents of ~/.aws/mfa-config.json
 #
 # [
 #     {
 #         "profile": "mfa",
-#         "jump_profile": "default",
+#         "source_profile": "default",
 #         "output": "json",
 #         "region": "us-east-2",
 #         "duration_seconds": "",
-#         "serial_number": "arn:aws:iam::123456789012:mfa/user",
+#         "mfa_serial": "arn:aws:iam::123456789012:mfa/user",
 #
 #     }
 # ]
@@ -70,15 +70,15 @@ done
 
 PROFILE_CONFIG=$(jq ".profiles[] | select(.profile==\"$PROFILE\")" $AWS_MFA_CONFIG_PATH)
 
-serial_number=$(echo $PROFILE_CONFIG | jq -r '.serial_number')
-if [ "$serial_number" == "null" ]; then
-    echo "$AWS_MFA_CONFIG_PATH: Missing field 'serial_number'"
+mfa_serial=$(echo $PROFILE_CONFIG | jq -r '.mfa_serial')
+if [ "$mfa_serial" == "null" ]; then
+    echo "$AWS_MFA_CONFIG_PATH: Missing field 'mfa_serial'"
     exit 1
 fi
 
-jump_profile=$(echo $PROFILE_CONFIG | jq -r '.jump_profile')
-if [ "$jump_profile" == "null" ]; then
-    jump_profile="default"
+source_profile=$(echo $PROFILE_CONFIG | jq -r '.source_profile')
+if [ "$source_profile" == "null" ]; then
+    source_profile="default"
 fi
 
 duration_seconds=$(echo $PROFILE_CONFIG | jq -r '.duration_seconds')
@@ -122,9 +122,9 @@ jq
 )
 
 aws_creds=$(aws sts get-session-token \
-	--serial-number "$serial_number" \
+	--serial-number "$mfa_serial" \
 	--token-code "$TOKEN" \
-	--profile "$jump_profile" \
+	--profile "$source_profile" \
 	--duration-seconds "$duration_seconds" \
 	--query "Credentials")
 
