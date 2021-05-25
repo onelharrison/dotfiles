@@ -31,3 +31,6 @@ export LIBGL_ALWAYS_INDIRECT=1
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 alias ggovm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"

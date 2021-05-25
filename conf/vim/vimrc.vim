@@ -15,21 +15,24 @@ set ignorecase
 " Search as characters are entereds
 set incsearch
 
-" Highlight seach matches
+" Highlight search matches
 set hlsearch
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Add colorscheme package
+packadd! onedark.vim
 
 " Enable syntax highlighting
 syntax enable
 
-" Set dark background, encourage use of light coloured text
-set background=dark
+" Set colorscheme
+colorscheme onedark
 
-" Enable material-monokai colour scheme
-" colorscheme material-monokai
+" Set background, dis/encourage use of light coloured text
+set background=light
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -87,3 +90,4 @@ so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/ale.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/coc.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-go.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-hardtime.vim
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/lightline.vim
