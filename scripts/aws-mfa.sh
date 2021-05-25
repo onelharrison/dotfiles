@@ -4,7 +4,7 @@ set -e
 
 AWS_CREDENTIALS_PATH="$HOME/.aws/credentials"
 
-AWS_MFA_CONFIG_PATH="$HOME/.aws/aws-mfa-config.json"
+AWS_MFA_CONFIG_PATH="$HOME/.aws/mfa-config.json"
 
 # Sample contents of ~/.aws/aws-mfa-config.json
 #
