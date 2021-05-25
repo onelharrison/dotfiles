@@ -34,6 +34,7 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-marketplace \
   coc-explorer \
   coc-pyright \
+  coc-git \
   coc-go \
   coc-json \
   coc-tsserver \
