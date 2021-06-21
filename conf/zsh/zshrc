@@ -3,6 +3,17 @@ export PATH="$DOTFILES_ROOT/bin:$PATH"
 export PATH="$DOTFILES_ROOT/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+case $OSTYPE in
+	darwin*)
+		test -d /usr/local/opt/gnu-sed/ && export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+		test -d /usr/local/opt/gawk/ && export PATH="/usr/local/opt/gawk/libexec/gnubin:$PATH"
+		test -d /usr/local/opt/coreutils/ && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+		;;
+	*)
+		:
+		;;
+esac
+
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
 for FILE in $(find "$DOTFILES_ROOT/conf" -name "*.zsh" -type f); do
@@ -25,11 +36,14 @@ if [ -f $DOTFILES_ROOT/conf/zsh/zshrc_extended ]; then
   . $DOTFILES_ROOT/conf/zsh/zshrc_extended
 fi
 
+alias ls="ls -G"
+
 # Enable WSL 2 + VcXsrv
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
 alias ggovm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
 export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
