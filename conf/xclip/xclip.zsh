@@ -1,3 +1,3 @@
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
-alias pbselect='xclip -selection primary -o'
+alias xcopy='xclip -selection clipboard'
+alias xpaste='xclip -selection clipboard -o'
+alias xselect='xclip -selection primary -o'
