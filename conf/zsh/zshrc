@@ -3,6 +3,7 @@ export PATH="$DOTFILES_ROOT/bin:$PATH"
 export PATH="$DOTFILES_ROOT/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# Update PATH to find preferred utilities first based on OSTYPE
 case $OSTYPE in
 	darwin*)
 		test -d /usr/local/opt/gnu-sed/ && export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -14,11 +15,17 @@ case $OSTYPE in
 		;;
 esac
 
+# Customize PROMPT
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
+# Source other zsh files
 for FILE in $(find "$DOTFILES_ROOT/conf" -name "*.zsh" -type f); do
   . $FILE
 done
+
+if [ -f $DOTFILES_ROOT/conf/zsh/zshrc_extended ]; then
+  . $DOTFILES_ROOT/conf/zsh/zshrc_extended
+fi
 
 # autoload -Uz vcs_info
 # precmd_vcs_info() { vcs_info }
@@ -28,23 +35,15 @@ done
 # zstyle ':vcs_info:git:*' formats '%F{117}(%b) %f%r'
 # zstyle ':vcs_info:*' enable git
 
-. $DOTFILES_ROOT/conf/zsh/rails.zsh
-
-. $DOTFILES_ROOT/conf/zsh/bundler.zsh
-
-if [ -f $DOTFILES_ROOT/conf/zsh/zshrc_extended ]; then
-  . $DOTFILES_ROOT/conf/zsh/zshrc_extended
-fi
-
-alias ls="ls -G"
-
 # Enable WSL 2 + VcXsrv
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"
+
+# DO NOT EDIT BELOW HERE: The code below was automatically appended
+
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
 alias ggovm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
-
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
-export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"
