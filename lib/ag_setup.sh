@@ -2,14 +2,13 @@
 
 echo 'INIT: ag setup initiated.'
 
-case $OSTYPE in
-	darwin*)
-		pkg_name="the_silver_searcher"
-		;;
-	*)
-		pkg_name="silversearcher-ag"
-		;;
-esac
+pkg_name='the_silver_searcher'
+
+if is_installed 'lsb_release'; then
+	if [ $(lsb_release -a | grep 'Ubuntu') ]; then
+		pkg_name='silversearcher-ag'
+	fi
+fi
 
 check_or_install $pkg_name
 
