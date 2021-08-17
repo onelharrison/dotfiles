@@ -36,6 +36,7 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-pyright \
   coc-git \
   coc-go \
+  coc-ccls \
   coc-json \
   coc-tsserver \
   coc-groovy \

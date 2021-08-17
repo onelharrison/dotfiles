@@ -29,7 +29,7 @@ auto-save-list
 # wget
 wget-log
 
-# Compiled source #
-###################
+# Compiled source
 *.o
 *.class
+*.out

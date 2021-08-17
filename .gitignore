@@ -26,6 +26,9 @@ conf/pyenv
 # rbenv
 conf/rbenv
 
+# antlr
+conf/antlr
+
 # zsh
 conf/zsh/zshrc_extended
 

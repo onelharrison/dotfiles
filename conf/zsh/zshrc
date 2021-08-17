@@ -5,14 +5,14 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # Update PATH to find preferred utilities first based on OSTYPE
 case $OSTYPE in
-	darwin*)
-		test -d /usr/local/opt/gnu-sed/ && export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-		test -d /usr/local/opt/gawk/ && export PATH="/usr/local/opt/gawk/libexec/gnubin:$PATH"
-		test -d /usr/local/opt/coreutils/ && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-		;;
-	*)
-		:
-		;;
+  darwin*)
+    [ -d /usr/local/opt/gnu-sed/ ] && export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+    [ -d /usr/local/opt/gawk/ ] && export PATH="/usr/local/opt/gawk/libexec/gnubin:$PATH"
+    [ -d /usr/local/opt/coreutils/ ] && export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    ;;
+  *)
+    :
+    ;;
 esac
 
 # Customize PROMPT
@@ -39,7 +39,7 @@ fi
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
-export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64/"
+# PySpark
 export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"
 
 # DO NOT EDIT BELOW HERE: The code below was automatically appended

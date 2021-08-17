@@ -91,3 +91,4 @@ so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/coc.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-go.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/vim-hardtime.vim
 so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/lightline.vim
+so ~/github.com/onelharrison/dotfiles/conf/vim/plugin_config/ultisnips.vim
