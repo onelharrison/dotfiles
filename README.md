@@ -28,5 +28,4 @@ cd dotfiles
     * Install [bat](https://github.com/sharkdp/bat) (cat alternative)
     * Install [fzf](https://github.com/junegunn/fzf) (+ vim plugin)
     * Add git symbols to command prompt
-    * Add autocompletion of git commands
 * Support vim config overrides that aren't version controlled

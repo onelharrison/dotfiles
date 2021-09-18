@@ -1,47 +1,48 @@
-# node/js
-node_modules/
-
-# npm
-conf/npm
-
-# n
-conf/n
-
-# Emacs
-*~
-\.emacs.desktop
-conf/emacs/emacs.d/
-!conf/emacs/emacs.d/init.el
-!conf/emacs/emacs.d/config/
-
-# Vim
-*.swo
-
-# Python
-.mypy_cache
-
-# pyenv
-conf/pyenv
-
-# rbenv
-conf/rbenv
-
 # antlr
 conf/antlr
 
-# zsh
-conf/zsh/zshrc_extended
+# aws
+conf/aws/
 
 # coc
 conf/coc/
 !conf/coc/coc-settings.json
 conf/vim/vimruntime/pack/plugins/start/coc.nvim-release/
 
+# emacs
+*~
+\.emacs.desktop
+conf/emacs/emacs.d/
+!conf/emacs/emacs.d/init.el
+!conf/emacs/emacs.d/config/
+
 # kaggle
 conf/kaggle/kaggle.json
 
-# aws
-conf/aws/
+# n
+conf/n
+
+# node/js
+node_modules/
+
+# npm
+conf/npm
+
+# vim
+*.swo
+
+# pyenv
+conf/pyenv
+
+# python
+.mypy_cache
+
+# rbenv
+conf/rbenv
+
+# zsh
+conf/zsh/zshrc_extended
+conf/zsh/git_completion.zsh
 
 # other
 tmp/
