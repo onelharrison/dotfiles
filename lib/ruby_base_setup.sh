@@ -9,6 +9,8 @@ install_rbenv() {
   $SCRIPT_ABS_DIR/conf/rbenv/src/configure
   make -C $RBENV_ROOT/src
 
+  echo "# rbenv" >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+
   echo "export RBENV_ROOT=\"$RBENV_ROOT\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 

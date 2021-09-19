@@ -8,6 +8,8 @@ install_pyenv() {
   echo 'INFO: Installing pyenv.'
   git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT
 
+  echo "# pyenv" >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+
   echo "export PYENV_ROOT=\"$PYENV_ROOT\"" \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
