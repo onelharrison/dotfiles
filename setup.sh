@@ -15,7 +15,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 
 . $SCRIPT_ABS_DIR/lib/utils.sh
 
-apps=(git tmux vim zsh jq ag)
+apps=(git tmux vim zsh jq ag bat)
 for app in ${apps[@]}; do
   . $SCRIPT_ABS_DIR/lib/${app}_setup.sh
 done
