@@ -1,9 +1,14 @@
 choco install 7zip -y
-choco install calibre --version=4.23.0
+choco install brave -y
+choco install calibre --version=4.23.0 -y
 choco install cryptomator -y
+choco install drawio -y
+choco install docker-desktop -y
 choco install f.lux -y
 choco install firefox -y
 choco install foxitreader -y
+choco install gimp -y
+choco install gh -y # GitHub CLI
 choco install git -y
 choco install keepassxc -y
 choco install microsoft-windows-terminal -y
@@ -18,3 +23,4 @@ choco install vagrant -y
 choco install vcxsrv -y
 choco install virtualbox --version=6.1.26 -y
 choco install vscode -y
+choco install zoom -y
