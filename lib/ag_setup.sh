@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: ag setup initiated.'
-
 pkg_name='the_silver_searcher'
 
 if is_installed 'lsb_release'; then
@@ -11,6 +9,3 @@ if is_installed 'lsb_release'; then
 fi
 
 check_or_install $pkg_name
-
-echo 'DONE: ag setup completed.'
-echo '--------'

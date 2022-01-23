@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: awscli setup initiated.'
-
 INSTALL_DIR="$SCRIPT_ABS_DIR/tmp/awscli"
 mkdir -p $INSTALL_DIR
 
@@ -16,6 +14,3 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" \
         rm -rf $INSTALL_DIR && \
         rm -rf $HOME/.aws && \
         ln -s $SCRIPT_ABS_DIR/conf/aws $HOME/.aws
-
-echo 'DONE: awscli setup completed.'
-echo '--------'

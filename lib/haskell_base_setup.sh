@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: haskell base setup initiated.'
-
 # Install stack
 # =============
 curl -sSL https://get.haskellstack.org/ | sh
@@ -31,6 +29,3 @@ git clone https://github.com/haskell/haskell-ide-engine --recurse-submodules
 cd haskell-ide-engine
 stack ./install.hs hie  # latest haskell-ide-engine and hoogle docs
 cd - && rm -rf haskell-ide-engine
-
-echo 'DONE: haskell base setup completed.'
-echo '--------'

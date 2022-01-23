@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: vim setup initiated.'
-
 check_or_install vim
 
 # vimrc
@@ -48,6 +46,3 @@ npm install --global-style --ignore-scripts --no-bin-links --no-package-lock --o
   coc-spell-checker
 
 cd -
-
-echo 'DONE: vim setup completed.'
-echo '--------'

@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo 'INIT: terraform setup initiated.'
-
 TF_VERSION=1.1.3
 TF_LSP_VERSION=0.0.11-beta2
 INSTALL_DIR="$SCRIPT_ABS_DIR/tmp/terraform"
@@ -27,6 +25,3 @@ wget -O "$INSTALL_DIR/terraform-lsp_${TF_LSP_VERSION}_linux_amd64.tar.gz" \
 
 # Clean up install directory
 rm -rf $INSTALL_DIR
-
-echo 'DONE: terraform setup completed.'
-echo '--------'

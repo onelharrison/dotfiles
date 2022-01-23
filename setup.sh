@@ -17,12 +17,16 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 
 apps=(git tmux vim zsh jq ag bat)
 for app in ${apps[@]}; do
+  echo "BEGIN: ${app} setup initiated."
   . $SCRIPT_ABS_DIR/lib/${app}_setup.sh
+  echo "END: ${app} setup completed."
 done
 
 langs=(javascript python)
 for lang in ${langs[@]}; do
+  echo "BEGIN: ${lang} setup initiated."
   . $SCRIPT_ABS_DIR/lib/${lang}_base_setup.sh
+  echo "END: ${lang} setup completed."
 done
 
 cd $SCRIPT_ABS_DIR

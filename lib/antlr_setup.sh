@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: ANTLR setup initiated.'
-
 ANTLR_VERSION=4.9.2
 
 ANTLR_ROOT="$SCRIPT_ABS_DIR/conf/antlr"
@@ -57,6 +55,3 @@ curl "https://www.antlr.org/download/antlr4-cpp-runtime-$ANTLR_VERSION-source.zi
 	&& cd $SCRIPT_ABS_DIR
 
 rm -rf $CPP_RUNTIME_INSTALL_DIR 2>/dev/null
-
-echo 'DONE: ANTLR setup completed.'
-echo '--------'

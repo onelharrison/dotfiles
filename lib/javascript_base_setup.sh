@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: javascript setup initiated.'
-
 # Install n
 # =========
 git clone https://github.com/tj/n.git 2>/dev/null
@@ -46,6 +44,3 @@ echo "export PATH=\"\$NPM_PACKAGES/bin:\$PATH\"" \
 # Install prettier
 # ================
 npm install -g prettier
-
-echo 'DONE: javascript setup completed.'
-echo '--------'

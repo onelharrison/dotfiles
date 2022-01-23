@@ -57,8 +57,6 @@ install_rbenv_plugin() {
   echo 'INFO: Done installing rbenv ruby-build plugin.'
 }
 
-echo 'INIT: ruby base setup initiated.'
-
 if [ ! -d "$RBENV_ROOT" ]; then
   install_rbenv
   check_or_install_ruby_build_dependencies
@@ -81,6 +79,3 @@ else
 fi
 
 install_rbenv_plugin 'rbenv' 'rbenv-vars'
-
-echo 'DONE: ruby base setup completed.'
-echo '--------'

@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-echo 'INIT: python setup initiated.'
-
 PYENV_ROOT="$SCRIPT_ABS_DIR/conf/pyenv"
 
 install_pyenv() {
@@ -14,6 +12,9 @@ install_pyenv() {
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
   echo "export PATH=\"$PYENV_ROOT/bin:\$PATH\"" \
+      >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
+
+  echo 'if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init --path)"; fi' \
       >> $SCRIPT_ABS_DIR/conf/zsh/zshrc_extended
 
   echo 'if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi' \
@@ -49,8 +50,8 @@ if [ ! -d "$PYENV_ROOT" ]; then
 
   install_pyenv
 
-  pyenv install 3.9.0
-  pyenv global 3.9.0
+  pyenv install 3.10.0
+  pyenv global 3.10.0
 fi
 
 # update the pip installation
@@ -66,7 +67,3 @@ python -m pip install bandit
 python -m pip install mypy
 python -m pip install black
 python -m pip install isort
-
-
-echo 'DONE: python base setup completed.'
-echo '--------'
