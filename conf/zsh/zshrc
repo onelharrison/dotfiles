@@ -19,21 +19,13 @@ esac
 export PROMPT="%B%F{240}%2~%f%b "$'\n'"%(?.%F{123}λ.%F{red}λ)%f "
 
 # Source other zsh files
-for FILE in $(find "$DOTFILES_ROOT/conf" -name "*.zsh" -type f); do
+for FILE in $(find "$DOTFILES_ROOT/conf" -maxdepth 3 -name "*.zsh" -type f); do
   . $FILE
 done
 
 if [ -f $DOTFILES_ROOT/conf/zsh/zshrc_extended ]; then
   . $DOTFILES_ROOT/conf/zsh/zshrc_extended
 fi
-
-# autoload -Uz vcs_info
-# precmd_vcs_info() { vcs_info }
-# precmd_functions+=( precmd_vcs_info )
-# setopt prompt_subst
-# RPROMPT=\$vcs_info_msg_0_
-# zstyle ':vcs_info:git:*' formats '%F{117}(%b) %f%r'
-# zstyle ':vcs_info:*' enable git
 
 # Enable WSL 2 + VcXsrv
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
@@ -47,3 +39,18 @@ export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
 
 alias ggovm="$GOPATH/bin/g"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/odev/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/odev/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/odev/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/odev/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
