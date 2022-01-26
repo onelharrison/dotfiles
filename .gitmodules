@@ -22,9 +22,3 @@
 [submodule "conf/vim/vimruntime/pack/plugins/start/vim-fugitive"]
 	path = conf/vim/vimruntime/pack/plugins/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "conf/vim/vimruntime/pack/plugins/start/ultisnips"]
-	path = conf/vim/vimruntime/pack/plugins/start/ultisnips
-	url = https://github.com/sirver/UltiSnips
-[submodule "conf/vim/vimruntime/pack/plugins/start/vim-snippets"]
-	path = conf/vim/vimruntime/pack/plugins/start/vim-snippets
-	url = https://github.com/honza/vim-snippets
