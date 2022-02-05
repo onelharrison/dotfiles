@@ -3,8 +3,6 @@
 export GIT_USER='onelharrison'
 export GIT_HOME="$HOME/github.com/$GIT_USER"
 
-check_or_install git
-
 # Setup space for git repos
 mkdir -p  $GIT_HOME
 

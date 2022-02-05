@@ -29,3 +29,13 @@ check_or_set_default_shell() {
     chsh -s $(which $1)
   fi
 }
+
+
+check_or_install curl
+check_or_install bat
+check_or_install git
+check_or_install jq
+check_or_install make
+check_or_install unizip
+check_or_install wget
+check_or_install zsh
