@@ -31,5 +31,5 @@ done
 
 cd $SCRIPT_ABS_DIR
 
-git submodule init
-git submodule update
+# git submodule init
+# git submodule update

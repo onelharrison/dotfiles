@@ -36,6 +36,7 @@ check_or_install bat
 check_or_install git
 check_or_install jq
 check_or_install make
-check_or_install unizip
+check_or_install unzip
 check_or_install wget
+check_or_install xclip
 check_or_install zsh

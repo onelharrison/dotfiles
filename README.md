@@ -23,9 +23,7 @@ cd dotfiles
     * Install [npm-groovy-lint](https://github.com/nvuillam/npm-groovy-lint)
 * Support programming with docker
     * Install docker
-    * Install [hadolint](https://github.com/hadolint/hadolint) for linting Dockerfiles
 * Improve overall terminal experience
-    * Install [bat](https://github.com/sharkdp/bat) (cat alternative)
     * Install [fzf](https://github.com/junegunn/fzf) (+ vim plugin)
     * Add git symbols to command prompt
 * Support vim config overrides that aren't version controlled
