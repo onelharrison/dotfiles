@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-check_or_install emacs
-
 if [ -e $HOME/.emacs.d.old ]; then
   rm -rf $HOME/.emacs.d.old
 fi

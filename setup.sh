@@ -15,7 +15,7 @@ export SCRIPT_ABS_DIR=$(dirname $SCRIPT_ABS_PATH)
 
 . $SCRIPT_ABS_DIR/lib/utils.sh
 
-apps=(git tmux vim zsh ag)
+apps=(git tmux vim zsh)
 for app in ${apps[@]}; do
   echo "BEGIN: ${app} setup initiated."
   . $SCRIPT_ABS_DIR/lib/${app}_setup.sh
