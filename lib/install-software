@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+# Run Homebrew through the brewfile and all of the install scripts.
+
+source $DOTHOME/lib/common
+
+function install_software () {
+    user "Install software? (y/n)"
+    read -s -n 1 response
+    if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+        if test $(which brew)
+        then
+            # Run Homebrew through the Brewfile
+            brew bundle --file=$DOTHOME/homebrew/Brewfile
+        fi
+    fi
+
+    # user "Run the install.sh scripts? (y/n)"
+    # read -s -n 1 response
+    # if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    #     # Find the installers and run them iteratively
+    #     find $DOTHOME -name install.sh | while read installer ; do sh -c "${installer}" ; done
+    # fi
+}

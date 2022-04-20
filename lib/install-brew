@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# This script will install Homebrew if it's not already present.
+
+source $DOTHOME/lib/common
+
+
+function install_brew () {
+    if test ! $(which brew)
+    then
+        user "Install Homebrew? (y/n)"
+        read -s -n 1 response
+
+        if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+            export HOMEBREW_NO_ANALYTICS=1
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+        fi
+
+        if test ! $(uname) = "Darwin"
+        then
+            source $DOTHOME/lib/install-build-tools
+            install_build_tools
+        fi
+
+        return
+    else
+        info "Homebrew is already installed"
+    fi
+}

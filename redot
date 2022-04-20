@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# This script will:
+#   - Set the MacOS defaults (if necessary)
+#   - Install Homebrew (if necessary)
+#   - Upgrade Homebrew
+#   - Install software
+#   - Symlink all the dotfiles
+
+export DOTHOME=$HOME/github.com/onelharrison/dotfiles
+
+source $DOTHOME/lib/common
+
+# Set MacOS defaults
+if [ "$(uname)" = "Darwin" ] && [ -f $DOTHOME/macos/set-defaults ]
+then
+    source $DOTHOME/macos/set-defaults
+    set_macos_preferences
+fi
+
+# Install Homebrew
+if [ -f $DOTHOME/lib/install-brew ]
+then
+    source $DOTHOME/lib/install-brew
+    install_brew
+fi
+
+# Upgrade Homebrew
+user "Upgrade Homebrew? (y/n)"
+read -s -n 1 response
+
+if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]; then
+    if test $(which brew)
+    then
+        brew update
+    else
+        info "Homebrew is not installed"
+    fi
+fi
+
+# Install software
+if [ -f $DOTHOME/lib/install-software ]
+then
+    source $DOTHOME/lib/install-software
+    install_software
+fi
+
+# Symlink all the dotfiles
+if [ -f $DOTHOME/lib/symlink-dotfiles ]
+then
+	:
+    # source $DOTHOME/lib/symlink-dotfiles
+    # symlink_dotfiles $DOTFILES_ROOT
+    #info "The symlinked dotfiles are:"
+    #show_symlinked_dotfiles
+fi

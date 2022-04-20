@@ -68,7 +68,6 @@ if [ ! -d "$RBENV_ROOT" ]; then
   rbenv global 2.7.1
 
   gem install bundler
-  gem install solargraph
   rbenv rehash
 
   # verify rbenv installation

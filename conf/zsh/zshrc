@@ -3,6 +3,9 @@ export PATH="$DOTFILES_ROOT/bin:$PATH"
 export PATH="$DOTFILES_ROOT/scripts:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+
 # Update PATH to find preferred utilities first based on OSTYPE
 case $OSTYPE in
   darwin*)
@@ -34,6 +37,9 @@ export LIBGL_ALWAYS_INDIRECT=1
 # PySpark
 export PYSPARK_SUBMIT_ARGS="--master local[2] pyspark-shell"
 
+echo 'eval "$(/home/odev/.linuxbrew/bin/brew shellenv)"' >> /home/odev/.zprofile
+eval "$(/home/odev/.linuxbrew/bin/brew shellenv)"
+
 # DO NOT EDIT BELOW HERE: The code below was automatically appended
 
 export GOPATH="$HOME/go"; export GOROOT="$HOME/.go"; export PATH="$GOPATH/bin:$PATH"; # g-install: do NOT edit, see https://github.com/stefanmaric/g
@@ -54,3 +60,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# Homebrew
+eval "$(/home/odev/.linuxbrew/bin/brew shellenv)"

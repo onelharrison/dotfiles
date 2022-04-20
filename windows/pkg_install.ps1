@@ -22,5 +22,5 @@ choco install steam-client -y
 choco install vagrant -y
 choco install vcxsrv -y
 choco install virtualbox --version=6.1.26 -y
-choco install vscode -y
+choco install vscodium -y
 choco install zoom -y

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#
+# This script will install build tools for Homebrew on Linux.
+
+function install_build_tools () {
+    sudo apt-get install build-essential procps curl file git
+}

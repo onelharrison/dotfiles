@@ -1,0 +1,75 @@
+cask_args appdir: '/Applications'
+
+tap 'homebrew/bundle'
+tap 'saulpw/vd'               # for visidata
+tap 'athrunsun/linuxbinary'   # Linux-only binaries used in place of cask
+tap 'fluxcd/tap'              # for flux (gitops for k8s)
+
+# Build tools
+#
+# These are common dependencies for building many software
+brew 'gcc'
+brew 'make'
+
+
+# Core utilities
+#
+# These are software I want installed on every machine.
+brew 'bat'
+cask 'emacs'
+brew 'fzf'
+# brew 'gnupg'
+brew 'jq' 
+brew 'tmux'
+brew 'ranger'
+brew 'peco'
+brew 'pup'
+brew 'neovim'
+brew 'saulpw/vd/visidata'
+brew 'syncthing'
+brew 'the_silver_searcher'
+brew 'tldr'
+brew 'unzip'
+brew 'vim'
+brew 'wget'
+brew 'xclip'
+brew 'zsh'
+brew 'zsh-completions'
+brew 'zsh-syntax-highlighting'
+
+
+# MacOS workstation applications
+#
+# These are the apps I want installed on a MacOS workstation.
+cask 'drawio'
+cask 'firefox'
+cask 'flux'
+cask 'keepassxc'
+cask 'postman'
+cask 'slack'
+cask 'zoomus'
+
+
+# Programming applications
+#
+# These are the apps I want installed on machines I program on.
+brew 'ansible'
+# brew 'antlr'
+# brew 'awscli'
+brew 'bash-language-server'
+brew 'coq'                   # Proof assistant for higher-order logic
+brew 'docker'
+brew 'doctl'                 # DigitalOcean CLI
+brew 'fluxcd/tap/flux'       # GitOps tools for Kubernetes
+brew 'gh'                    # GitHub CLI
+brew 'hadolint'              # Dockerfile linter
+brew 'haskell-stack'
+brew 'helm'                  # Kubernetes package manager
+brew 'kubectl'               # Kubernetes CLI
+brew 'n'                     # Node version manager
+brew 'pyenv'                 # Python version manager
+brew 'rbenv'                 # Ruby version manager
+brew 'solargraph'            # Ruby language server
+brew 'terraform'
+brew 'terraform-lsp'
+brew 'prettier'              # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML

@@ -1,0 +1,35 @@
+export DOTHOME=$HOME/github.com/onelharrison/dotfiles
+
+# Execute the stuff common to all shells (well, bash and zsh anyway)
+if [ -f $DOTHOME/system/shellrc ]; then
+   source $DOTHOME/system/shellrc
+fi
+
+# Load Oh My ZSH!
+if [ -f $DOTHOME/ohmyzsh/ohmyzsh.zsh ]; then
+   source $DOTHOME/ohmyzsh/ohmyzsh.zsh
+fi
+
+# Load the sudo Homebrew-installed ZSH completions
+# https://github.com/zsh-users/zsh-completions
+if [ -d /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
+# Load the user Homebrew-installed ZSH completions
+# https://github.com/zsh-users/zsh-completions
+if [ -d $HOME/.linuxbrew/share/zsh-completions ]; then
+    fpath=($HOME/.linuxbrew/share/zsh-completions $fpath)
+fi
+
+# Load the sudo Homebrew-installed ZSH syntax highlighting. This must be at the end of this file!
+# https://github.com/zsh-users/zsh-syntax-highlighting
+if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Load the user Homebrew-installed ZSH syntax highlighting. This must be at the end of this file!
+# https://github.com/zsh-users/zsh-syntax-highlighting
+if [ -f $HOME/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+    source $HOME/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
