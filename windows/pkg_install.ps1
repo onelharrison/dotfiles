@@ -26,3 +26,9 @@ choco install vcxsrv -y
 choco install virtualbox --version=6.1.26 -y
 choco install vscodium -y
 choco install zoom -y
+
+# Enable WSL
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+
+# Install Ubuntu 20.04 LTS WSL distro
+wsl --install -d Ubuntu-20.04
