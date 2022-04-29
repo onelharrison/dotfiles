@@ -1,5 +1,6 @@
 choco install 7zip -y
 choco install brave -y
+choco install chocolateygui -y
 choco install calibre --version=4.23.0 -y
 choco install cryptomator -y
 choco install drawio -y
