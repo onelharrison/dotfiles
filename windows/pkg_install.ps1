@@ -11,6 +11,7 @@ choco install foxitreader --version=11.1.0.52543 -y
 choco install gimp -y
 choco install gh -y # GitHub CLI
 choco install git -y
+choco install joplin -y
 choco install keepassxc -y
 choco install libreoffice-fresh -y
 choco install microsoft-windows-terminal -y
