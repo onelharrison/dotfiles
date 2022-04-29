@@ -23,6 +23,7 @@ choco install shotcut -y
 choco install signal -y
 choco install slack -y
 choco install steam-client -y
+choco install syncthing -y
 choco install vagrant -y
 choco install vcxsrv -y
 choco install virtualbox --version=6.1.26 -y
