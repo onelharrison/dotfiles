@@ -12,6 +12,7 @@ choco install gimp -y
 choco install gh -y # GitHub CLI
 choco install git -y
 choco install keepassxc -y
+choco install libreoffice-fresh -y
 choco install microsoft-windows-terminal -y
 choco install obs-studio -y
 choco install powershell-core -y
