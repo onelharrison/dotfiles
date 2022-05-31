@@ -8,11 +8,11 @@
 auto-save-list
 
 # Python
-*.pyc
-.env
+__pycache__/
+*.py[cod]
 
 # Vim
-*.swp
+*.sw[op]
 .netrwhist
 
 # Ruby
@@ -33,3 +33,6 @@ wget-log
 *.o
 *.class
 *.out
+
+# Environments
+.env

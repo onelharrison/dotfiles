@@ -3,8 +3,15 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManage
 
 # Install chocolatey packages
 choco install ./chocolatey/packages.config --yes
+
 # Pin chocolatey packages
 pwsh ./chocolatey/pins.ps1
+
+# Run post-install settings for packages
+Get-ChildItem -Depth 2 | Where-Object Name -eq "settings.ps1" | ForEach-Object { pwsh $_.FullName }
+
+# Run tasks
+Get-ChildItem | Where-Object Name -eq "_tasks" | Get-ChildItem | ForEach-Object { pwsh $_.FullName }
 
 
 # Configure WindowsOptionalFeatures
