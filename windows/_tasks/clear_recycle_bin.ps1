@@ -1,4 +1,4 @@
-$TaskName = 'dotfiles_RunSyncthing'
+$TaskName = 'dotfiles_ClearRecycleBin'
 
 # Remove task if it exists
 $Task = Get-ScheduledTask -TaskName $TaskName -ErrorAction Ignore
@@ -7,8 +7,8 @@ if ($Task) {
 }
 
 # Recreate task with desired settings
-$Action = New-ScheduledTaskAction -Execute 'syncthing.exe' -Argument '--no-console --no-browser'
-$Trigger = New-ScheduledTaskTrigger -AtStartup
+$Action = New-ScheduledTaskAction -Execute 'pwsh.exe' -Argument '-NonInteractive -NoLogo -NoProfile -WindowStyle Hidden -Command "Clear-RecycleBin -Force"'
+$Trigger = New-ScheduledTaskTrigger -Daily -DaysInterval 30 -At 10pm
 $Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit '00:00:00'
-$Principal = New-ScheduledTaskPrincipal -UserId $env:UserName -LogonType S4U
+$Principal = New-ScheduledTaskPrincipal -UserId $env:UserName
 Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principal
