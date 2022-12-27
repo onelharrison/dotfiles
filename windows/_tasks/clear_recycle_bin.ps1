@@ -9,6 +9,6 @@ if ($Task) {
 # Recreate task with desired settings
 $Action = New-ScheduledTaskAction -Execute 'pwsh.exe' -Argument '-NonInteractive -NoLogo -NoProfile -WindowStyle Hidden -Command "Clear-RecycleBin -Force"'
 $Trigger = New-ScheduledTaskTrigger -Daily -DaysInterval 30 -At 10pm
-$Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit '00:00:00'
+$Settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit '00:00:00'
 $Principal = New-ScheduledTaskPrincipal -UserId $env:UserName
 Register-ScheduledTask -TaskName $TaskName -Action $Action -Trigger $Trigger -Settings $Settings -Principal $Principal
