@@ -18,12 +18,12 @@ cd dotfiles
 
 * Support programming with Racket
     * Install Racket
-    * Install [racket-language-server](https://github.com/theia-ide/racket-language-server)
 * Improve editing experience for Jenkinsfiles
     * Install [npm-groovy-lint](https://github.com/nvuillam/npm-groovy-lint)
-* Support programming with docker
-    * Install docker
 * Improve overall terminal experience
     * Install [fzf](https://github.com/junegunn/fzf) (+ vim plugin)
     * Add git symbols to command prompt
 * Support vim config overrides that aren't version controlled
+* Capture android configuration
+* Capture vscode settings
+* Capture windows terminal settings
